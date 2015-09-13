@@ -1,0 +1,23 @@
+what exactly is the JVM? 
+
+    >JVM is a virtual platform that resides on your RAM
+    >Its component, Class loader loads the .class file into the RAM
+    >The Byte code Verifier component in JVM checks if there are any access restriction violations in your code. (This is one of the principle reasons why java is secure)
+    >Next, the Execution Engine component converts the Bytecode into executable machine code
+
+
+JVM is Java Virtual Machine --Runs/ Interprets/ translates Bytecode into Native Machine Code
+
+JIT is Just In Time Compiler --Compiles the given bytecode instruction sequence to machine code at runtime before executing it natively. 
+It's main purpose is to do heavy optimizations in performance. 
+
+The JVM is not platform independent.it's specific to the O.S/platform on which it has to be installed as it should be able to 
+convert platform independent byte code in.class file to native/machine code.
+
+some langauges are platform independent at the source code level (C/C++ is a good example) but lose platform independence once the code is compiled (since native code is platform specific). Java retains platform independence even after code is compiled because it compiles to platform independent bytecode 
+(the actual conversion to native code is handled at a later time after the bytecode is loaded by the JVM)
+
+JRE
+it contains the classes and resources needed to run java programs.
+
+jvm encapsulates JIT,jre encapsulates jvm, and jdk encapsulates jre

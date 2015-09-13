@@ -1,0 +1,8 @@
+1) how does statements like Aa.bb().cc() works??
+
+normally,we think that bb() is a function of object Aa,so how a function can have function in side it?well,it's not so...what happens is bb() returns object of
+some class,not primitive data type,and cc() is function of that object returned.
+
+static imports?
+
+2) to write data to sockets,use of printwriter is suggested,and to read,buffered reader is suggested.

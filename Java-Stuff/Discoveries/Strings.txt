@@ -1,0 +1,58 @@
+String literal is a string object with value of that string; eg:  String h="hello";  here the String literal object with value of "hello" is created in String pool
+and h points to it.
+String Pool exists inside heap memory
+when we create a string as:    String s="sai";   JVM first searches for that literal in String pool, if it matches,
+same reference will be given to that new String,else a new String literal is created in String Pool.
+for String str=new String("sai"); the new String will be created in Heap as a object and it's reference will be given to str.
+
+String s="sai";
+String x="sai";
+print(s==x)
+
+in above code.true is printed.First String sai is created in String pool and gives it's reference to s.
+when JVM tries to create String X,it searches for String sai in string pool.as sai already exists in String pool,its reference is given
+to the x.
+in comparision of s==x, JVM compares if s an x have reference to same String literal in the pool.as s and x points to same String sai
+, true is printed.
+
+String s=new String("sai");
+String x=new String("sai");
+print(s==x);
+print(s.equals(x))
+
+in this code,a new object of String sai is created in Heap outside of String pool.although both has same string sai,they will not refer 
+to same string,instead completely new one is created.now if we check by s==x,it prints false,as they dont refer to same String literal.
+but .equals() checks character by character.so it returns true.
+
+String s=new String("sai");
+String d=s;
+print(d==s);
+it prints true as now d points to the object of String "sai".
+to note:
+"==" tests object references, .equals() tests the string values. 
+
+String Interning:
+when we create a string as String s="sai",then a new String literal is created in string pool.if we now create String c="sai",then String literal of "sai"
+is searched in String pool,if found its reference is returned to c.now s and c refer to String literal "sai".this searching and referencing is called
+interning .it saves the space and improves effeciency.the literal "sai" cannot be changed by any String variable,because if it is being referenced by
+two or more variables and if one variable changes it,other variables also get changed value,hence String literals cannot be changed,so they are Immutable.
+
+using method intern() explicitly:
+
+when we create string by String s=new String("sai") and other variable as String sd=new String("sai") the s==sd gives false as new String("sai") creates 
+a new object ,so s and sd doesnot point to same literal. 
+String s=new String("sai");
+String d="sai";
+print(d==s);//it also prints false as d refers to string literal "sai",not to the String object of "sai"
+but if we write as:
+String s="sai"
+String x=new String("sai").intern();
+print (s==x)//it prints true !
+
+it's because intern() method searches String literal "sai" in String pool,if found,its reference is returned to x.so s and x points to same literal.
+
+
+http://stackoverflow.com/questions/tagged/java?sort=frequent&pageSize=15
+http://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-java
+
+

@@ -1,0 +1,4 @@
+the reference variables of parent class can refer to child class object,but they can't access the methods of
+child classes which are not defined in them(parent class).for eg: two classes implement a interface "In" and both 
+overrides the method "com".both have their own body,now if refernce of "In" is able to call method of both
+child classes and if it calls com(),then there will be confusion on which methid to call among two child classes.

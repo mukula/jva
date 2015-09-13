@@ -1,0 +1,31 @@
+in java,objects that longer are needed are treated as garbage.garbage collection is the process of removing such
+garbage and freeing the memory.thus its a kind of memory recycling.	its done automatically by jvm's garbage collector
+ so that it doesnot increase the workload of developer,but in this way it adds overhead that can affect the program
+ perfromance.
+ 
+ Garbage Collection Algorithms
+
+Any garbage collection algorithm must do two basic things. First, it must detect garbage objects.
+Second, it must reclaim the heap space used by the garbage objects and make the space available again to the program 
+
+Generally an object becomes eligible for garbage collection in Java on following cases:
+
+1) All references of that object explicitly set to null e.g. object = null
+
+2) Object is created inside a block and reference goes out scope once control exit that block.
+
+3) Parent object set to null.
+
+
+finalize() method
+
+The finalize() method is invoked each time before the object is garbage collected. This method can be used to perform cleanup processing. This method is defined in Object class as:
+
+protected void finalize(){}  
+
+
+gc() method
+
+The gc() method is used to invoke the garbage collector to perform cleanup processing. 
+The gc() is found in System and Runtime classes.it can be used to free up space by writing System.gc();
+public static void gc(){}  

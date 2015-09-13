@@ -1,0 +1,15 @@
+1)Class and Object
+
+Classes are Templates or blueprint for creating objects.
+Object is an instance of class.
+
+2) data encapsulation
+ it is binding both the class methods and fields(variable) together which is generally done to protect the class fileds from being changed from outside class
+ and it can be achieved by declaring the class fields private.
+ 
+ 
+ 
+ 
+ 
+ 
+ Generics

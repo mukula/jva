@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<XmlDataTree>
+    <XmlData>
+        <name>java</name>
+    </XmlData>
+    <XmlData>
+        <name>javascript</name>
+    </XmlData>
+    <XmlData>
+        <name>javabeans</name>
+    </XmlData>
+</XmlDataTree>

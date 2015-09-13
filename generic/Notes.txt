@@ -1,0 +1,148 @@
+In Gen1 ,simple example of generic classes is given
+
+in Gen2, the advantages of Generic classes over non-generic classes is shown which are as follows:
+      1) generic classes provides implicit casting
+	  2) they ensure type safety .
+	  here,raw types have also been shown
+
+Gen3 shows multiuple type parameters in Generic classes
+
+Gen4 shows Bounded types,where the types can only be one,who extends/implements given class/interface.
+
+Gen5 shows drawbacks of generic methods and its solution by using wildcards in which type is decided at Runtime
+ 
+in Gen6,we will see different types of declaration for generic methods and Bounded type wildcards and also type inference
+
+in Gen7,generic arrays are shown.	
+{
+class A { /* ... */ }
+class B extends A { /* ... */ }
+
+B b = new B();
+A a = b;//valid
+
+List<B> lb = new ArrayList<>();
+List<A> la = lb;   // compile-time error
+}
+
+Type Erasure
+
+Generics were introduced to the Java language to provide tighter type checks at compile time and to support generic programming. To implement generics, the Java compiler applies type erasure to:
+
+    >Replace all type parameters in generic types with their bounds or Object if the type parameters are unbounded. The produced bytecode, therefore, contains only ordinary classes, interfaces, and methods.
+    >Insert type casts if necessary to preserve type safety.
+    >Generate bridge methods to preserve polymorphism in extended generic types.
+
+Type erasure ensures that no new classes are created for parameterized types; consequently, generics incur no runtime overhead.
+
+Erasure of Generic Types:
+
+public class Node<T> {
+
+    private T data;
+    private Node<T> next;
+
+    public Node(T data, Node<T> next) }
+        this.data = data;
+        this.next = next;
+    }
+
+    public T getData() { return data; }
+    // ...
+}
+
+ Because the type parameter T is unbounded, the Java compiler replaces it with Object:
+
+public class Node {
+
+    private Object data;
+    private Node next;
+
+    public Node(Object data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public Object getData() { return data; }
+    // ...
+}
+
+ In the following example, the generic Node class uses a bounded type parameter:
+
+public class Node<T extends Comparable<T>> {
+
+    private T data;
+    private Node<T> next;
+
+    public Node(T data, Node<T> next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public T getData() { return data; }
+    // ...
+}
+
+The Java compiler replaces the bounded type parameter T with the first bound class, Comparable:
+
+public class Node {
+
+    private Comparable data;
+    private Node next;
+
+    public Node(Comparable data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public Comparable getData() { return data; }
+    // ...
+}
+
+	  
+	  
+Erasure of Generic Methods
+
+ The Java compiler also erases type parameters in generic method arguments. Consider the following generic method:
+
+// Counts the number of occurrences of elem in anArray.
+//
+public static <T> int count(T[] anArray, T elem) {
+    int cnt = 0;
+    for (T e : anArray)
+        if (e.equals(elem))
+            ++cnt;
+        return cnt;
+}
+
+Because T is unbounded, the Java compiler replaces it with Object:
+
+public static int count(Object[] anArray, Object elem) {
+    int cnt = 0;
+    for (Object e : anArray)
+        if (e.equals(elem))
+            ++cnt;
+        return cnt;
+}
+
+
+Restriction on use of generics:
+
+1)Cannot Instantiate Generic Types with Primitive Types
+Pair<int, char> p = new Pair<>(8, 'a');  // compile-time error	  
+
+2)Cannot Create Instances of Type Parameters
+public static <E> void append(List<E> list) {
+    E elem = new E();  // compile-time error
+    list.add(elem);
+}
+
+3)Cannot Declare Static Fields Whose Types are Type Parameters
+public class MobileDevice<T> {
+    private static T os;
+
+    // ...
+}
+
+4)Cannot Create Arrays of Parameterized Types
+List<Integer>[] arrayOfLists = new List<Integer>[2];  // compile-time error

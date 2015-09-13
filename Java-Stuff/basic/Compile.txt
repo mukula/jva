@@ -1,0 +1,35 @@
+we write java program,save it as .java file called Source file.then we must compile it using
+javac command.javac is a executable file that rests inside lib folder of jdk folder.The compilations involves two process,
+one is checking for errors and other is to generate byte code that can run on any platform having JVM.after successful compilation,
+.class file is generated.
+
+To use a class in our program,we can use by it's fully qualified name ,for eg: String,we can use it as java.lang.String.
+.at compile time,the compiler searches for lang package in java package,and then String class in lang package.if it can't find
+string class in it,C.T error is thrown.but its difficult to write the fully qualified name everywhere,so we use imports.if we import
+java.lang.*; then we need not use fully qualified name for String.we can directly write  String  when needed.So imports saves us 
+from typing more.
+the packages which we import is searched by compiler in given classpath.
+
+if we have two programs-A.java & B.java in same folder, and in A.java,we use class B,then on compilation,
+.class file of B is also generated along with the A.class,we can say-therefore compiler also checks for classes in same folder.
+
+
+.class file contains byte code which is not machine language,but just an instructions for JVM.this byte code is converted to machine level language by JVM.it is job of the JVM to convert
+the byte code to machine code specific to device on which it is installed.thus we need not need to generate different .class
+file for different platforms,as it is handeled by JVM.Thus JVM helps us to achieve platform independancy which says "compile once,
+run anywhere.
+
+note:
+1) Compiler compiles java file i.e. it converts .java file to .class file. 
+Now, since .class file is platform independent (i.e. compiled class file of a java file will be same - no matter if the java file was compiled on Windows/Linux/Mac etc.), from algorithmic perspective, yes, compiler is same across the platforms. But, since it is an executable file, the file itself will be different i.e. on Windows, it would be .exe, on Linux, it would be Linux executable etc.
+
+2)JVM converts bytecode (i.e. .class file) to 'system specific' code. Now, since system specific code, as the name suggests is dependent on OS, clearly, from algorithmic point of view, JVM is different across OS. Further, as mentioned in point 1, actual file will also be different on different OS.
+
+In short:
+1) Java compiler/JRE installed on one OS will not work on other OS. That is why Oracle gives options like 'JDK for Windows', 'JDK for Linux' while downloading.
+2) A Java code compiled on one OS will run on other OS. This is because bytecode (i.e. .class file) for same .java file would be same across operating systems.
+3) Disassembled bytecode (i.e. system specific code - which can be obtained by javap utility) for same .class file will be different across operating systems.
+
+
+
+ 

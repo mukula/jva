@@ -1,0 +1,1 @@
+this folder contains programs to achieve remote method invocation.MyClient runs the method add from MyServer remotely.

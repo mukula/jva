@@ -1,0 +1,69 @@
+http://tutorials.jenkov.com/maven/maven-tutorial.html
+
+Maven is a powerful build tool for Java software projects.
+Actually, you can build software projects using other languages too, but Maven is developed in Java, and is thus historically used more for Java projects.
+
+ A build tool is a tool that automates everything related to building the software project. Building a software project typically includes one or more of these activities:
+
+    >Generating source code (if auto-generated code is used in the project).
+    >Generating documentation from the source code.
+    >Compiling source code.
+    >Packaging compiled code into JAR files or ZIP files.
+    >Installing the packaged code on a server, in a repository or somewhere else.
+
+if a software project have more activities than above ones needed to build the finished software, 
+they can normally be plugged into a build tool, so these activities can be automated too. 	
+
+the advantage of automating the build process is that you minimize the risk of humans mistakes while building the software manually and the process become faster.
+
+Maven is centered around the concept of POM files (Project Object Model). A POM file is an XML representation of project resources like source code, test code, dependencies (external JARs used) etc.
+The POM file should be located in the root directory of the project it belongs to. 
+
+pom.xml primarily contains :
+build lifecycles
+dependicies
+build plugins
+build profiles 
+
+
+maven in action:
+1) Maven first reads pom.xml. Maven will then execute the command on the resources described in the POM.
+2) Download Dependencies and Repositories- One of the first goals Maven executes is to check the dependencies needed by your project. Dependencies are external JAR files (Java libraries) that your project uses. If the dependencies are not found in the local Maven repository,
+   Maven downloads them from a central Maven repository and puts them in your local repository which is just a directory on your computer's hard disk.
+3) executes Life Cycles and Goals- A build life cycle consists of a sequence of build phases, and each build phase consists of a sequence of goals. If a life cycle is requested executed, all build phases in that life cycle are executed. 
+   If a build phase is requested executed, all build phases before it in the pre-defined sequence of build phases are executed too. 
+4) executes Build Plugins-Build plugins are used to insert extra goals into a build phase. If you need to perform a set of actions for your project which are not covered by the standard Maven build phases and goals, you can add a plugin to the POM file. 
+   Maven has some standard plugins you can use, and you can also implement your own in Java if you need to.  
+
+A maven repository is a directory of packaged JAR file with pom.xml file. Maven searches for dependencies in the repositories. There are 3 types of maven repository:
+
+    Local Repository
+    Central Repository
+    Remote Repository
+
+Maven searches for the dependencies in the following order:
+Local repository then Central repository then Remote repository.
+If dependency is not found in these repositories, maven stops processing and throws an error.
+
+Maven central repository is located on the web. It has been created by the apache maven community itself.
+
+The path of central repository is: http://repo1.maven.org/maven2/.
+The central repository contains a lot of common libraries that can be viewed by this url http://search.maven.org/#browse.
+
+A remote repository is a repository on a web server from which Maven can download dependencies, just like the central repository. 
+A remote repository can be located anywhere on the internet, or inside a local network. 
+A remote repository is often used for hosting projects internal to your organization, which are shared by multiple projects. 
+For instance, a common security project might be used across multiple internal projects.
+
+maven and ant
+
+Ant is another popular build tool by Apache.
+Ant uses an imperative approach, means in the Ant build, you specify the actions, and you also specify the sequence in which they are carried out. 
+Ant has no default directory layout.
+
+Maven uses a more declarative approach, meaning that you specify in the Maven POM file what to build, but not how to build it.
+in Maven, how to build your project is predefined in the Maven Build Life Cycles, Phases and Goals. 
+maven has a default directory structure.
+
+  
+   

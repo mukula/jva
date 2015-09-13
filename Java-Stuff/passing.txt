@@ -1,0 +1,23 @@
+in java ,primitive data types are passed by value,i.e the copy of value of that argument.In C,we could pass by reference
+through which we can change the variable value that was passes as refernce.pass by reference is not allowed in java for
+primitive data types.
+
+Java is always pass-by-value. 
+Java passes objects as references and those references are passed by value.
+in following class,variable st holds the reference to object with value "sai",i.e st has address of String object
+"sai".now when we pass st as argument in tot,st is not itself passes,its value is passed,i.e the copy of  address stored 
+by st is passes into tot,and then it is stored in String f.so now f also efers to String "sai".It all seems like we ae
+passing by refernce,which is not so.
+
+class TotMall{
+TotMall(){
+String st=new String("sai");
+tot(st)
+}
+void tot(String w)
+{
+String f=w;
+}
+}
+
+

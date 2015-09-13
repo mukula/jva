@@ -1,0 +1,21 @@
+https://www.artima.com/insidejvm/ed2/jvm4.html
+https://www.artima.com/insidejvm/ed2/lifetype.html
+http://www.onjava.com/pub/a/onjava/2005/01/26/classloading.html
+http://javarevisited.blogspot.in/2012/12/how-classloader-works-in-java.html
+
+In a JVM, each and every class is loaded by some instance of a java.lang.ClassLoader.
+the parent classloader is bootstrap class loader responible for loading classes from rt.jar.These classes are loaded 
+everytime we run any java program. the classes are loaded only once until we run the program again.
+
+next classloader is extension class loader responsible for loading classes from java.ext.dirs.its child of bootstrap
+classloader
+
+next is system classpath classloader which is child of extension class loader.it is responsible classes from jar we provided in
+classpath.
+
+classloader follow delegation model,i.e the child class delegate search of classes to their parents which mean,
+a classloader first asks its parent to search forr the class in their level,if not avaliable,it searches in its level.
+In effect, a classloader is responsible for loading only the classes not available to the parent; 
+ classes loaded by a classloader higher in the hierarchy cannot refer to classes available lower in the hierarchy.
+
+
