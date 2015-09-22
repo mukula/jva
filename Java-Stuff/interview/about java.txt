@@ -1,0 +1,26 @@
+1) why use Java?
+Ans)   a) Java is simple: the syntax is similar to c++,so java is easy to learn for c++ programmers .Java does not contain complicated features like explicit pointers , operator overloading 
+			as they may create few bugs (like memory leaks due to unreferenced locations ).we need not waste our time in removing unreferenced objects as Automatic Garbage collection does that job.
+	   b) Java is platform independent : (A platform is the hardware or software environment in which a program runs) . Java is platform independent bacause once we compile the java
+	       programs,we can run the byte code on any platform that have jvm installed.(jvm takes care of converting byte code to native code.so jvm is platform specific)(c is not platform as 
+		   after compiling,native code is generated which is specific to the O.S and other O.S may not understand it).thus we need not compile the code for every platform. (c and c++ can also
+		   be platform independent by using multi platform libraries like QT or boost).
+	   if asked: java is secure: java is secure due to access modifiers like public,protected private and default.if we dont want the data members to be accesed out of class,we can use private.
+	   also,we have security manager that prevents the java programs to cause any loss to system they are running on.
+	   c) Object oriented: the software are developed to solve problems of real world , and by using object oriented programming,we can design the classes and objects that resembles real world.
+	      oop in java has many powerful features like inheritance,polymorphism,abstraction ,encapsulation .
+	   d) supports web based technologies such as Servlets and jsp ,supports distributed applications such as sockets ,Rmi and ejb
+	   e) memory management : Automatic garbage collection , the absence of pointers to avoid memory problems and many more.
+	   
+2) why oops?
+ans) a) oops is a methodology to design program using classes and objects.oops provide us important features like inheritance,polymorphism,Abstraction and Encapsulation.   
+     b) by using oops,we get the benefit of making the code modular,reusable and extensible which leads to faster development and better quality of softwares.
+	    
+		(
+		  modular : oop is modular which means that each class or a method must have a simple and specific functionality for efficient implementation.
+		  reusable: most of the times,we reuse the code by using the available api's.for eg. we make a class for validation of username and password,and we can use it in the softwares where we need such validation.
+		  extensible: if we want more functionalty in a class,we can add data members and methods to it.
+		  faster development: due to code reusability.
+		  quality: oop helps us to minimize the number of flaws in a code by using standard api's,encapsulation .
+		)
+		
