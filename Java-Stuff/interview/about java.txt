@@ -23,4 +23,56 @@ ans) a) oops is a methodology to design program using classes and objects.oops p
 		  faster development: due to code reusability.
 		  quality: oop helps us to minimize the number of flaws in a code by using standard api's,encapsulation .
 		)
+3) difference between java and c++ :
+ans) C++ was designed for systems and appliction programming,extending the c langugage.
+     Java was initially designed as an interpreter for printing systems.Java was dependent on a virtual machine to be portable which made it platform independent
+     but c++ was platform dependent as the native code(machine level) generated after compilation is specific to that particular O.S.		 
+	 
+	 unlike c++,java doesnot support pointers.infact,java supports references which acts like restricted pointers.we can refer to actual address,but we cannot do any arithmetic operations
+	 on references as we can do in the case pointers.(pointers can create many problems )
+	 
+	 c++ supports multiple inheritance,but java doesn't as it may cause problems.(if a class inherits two classes that have methods with same name,compilation error is thrown.)
+	 
+	 unlike c++,java doesnot supports destructors that job is done by AGC-automatic garbage collection.(AGC calls finalize method to release system resources such as open files or open sockets.)
+	 
+	 c++ supports operator overloading,but java doesnot.
+	 
+	 c++ uses only compiler,but java uses both comiler and interpreter.javac is java compiler which converts the java code to byte code that is platform independent . JVM has the interpreter which converts the byte code into 
+	 executable native code.c++ compiler directly converts source code to native executable code.
+
+4) What are the usages of Java packages?
+ans) It helps solve naming conflicts when different packages have classes with the same names. This also helps you
+organize files within your project. For example: java.io package do something related to I/O and java.net
+package do something to do with network and so on.
+
+5) static and dynamic class  loading.
+ans) we can load a class statically by using new operator. if that class is not found at runtime,NoClassDefFoundException is thrown. In dynamic classloading,the class information can be 
+     provided at runtime by invoking the methods of class class.eg: we can load a class by passing its name as string into class.forName(). here we can provide the name of class at runtime.
+	 then we can create the object of that class by class,newInstance(). if that class is not found,classnotFounException is thrown.
+
+6) static blocks / static initialized	 
+ans) they dont have any name and they are executed before constructors are executed.they are used to initialized static fields.
+
+7)difference between constructors and regular methods.
+ans) Constructors must have the same name as the class name and cannot return a value. The constructors are called only once per creation of an object while regular methods 
+ can be called many times. Regular methods can have any name and can have any return type.
+ 
+8) calling constructors:
+   to call same class const, use this() and for parent class use super().
+   to call super class method,use super.foo().
+
+9) s   
+     
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 		

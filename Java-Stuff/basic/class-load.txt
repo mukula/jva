@@ -16,6 +16,6 @@ classpath.
 classloader follow delegation model,i.e the child class delegate search of classes to their parents which mean,
 a classloader first asks its parent to search forr the class in their level,if not avaliable,it searches in its level.
 In effect, a classloader is responsible for loading only the classes not available to the parent; 
- classes loaded by a classloader higher in the hierarchy cannot refer to classes available lower in the hierarchy.
+classes loaded by a classloader higher in the hierarchy cannot refer to classes available lower in the hierarchy.
 
 
