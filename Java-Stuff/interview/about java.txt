@@ -1,3 +1,5 @@
+http://www.programmerinterview.com/index.php/java-questions/how-system-out-println-works/
+
 1) why use Java?
 Ans)   a) Java is simple: the syntax is similar to c++,so java is easy to learn for c++ programmers .Java does not contain complicated features like explicit pointers , operator overloading 
 			as they may create few bugs (like memory leaks due to unreferenced locations ).we need not waste our time in removing unreferenced objects as Automatic Garbage collection does that job.
@@ -77,12 +79,27 @@ ans) We can apply java static keyword with variables, methods, blocks and nested
      we can call static members in non static methods,but not vice versa (because non static members are not allocated memory at the time of class loading,so c.t error is thrown)
 	 
 	 we make those class variables static which has to be shared among different instances of same class and which has to be called in static methods before their instances are created.
-	 
-     few reasons to make class methods static are:
+	
+    few reasons to make class methods static are:
 			a) these methods can work independent of instance creation and they donot use any instance variables.
-			( consider a methods convertMphToKmph() of Car class.if this method was non static,then we have to create a instance of car class to use that method ,but if we make that
+			( the out field of System class is static,that's why we can call System.out.println() without creating a instance of system class,by which we  save memory at runtime.
+			consider a methods convertMphToKmph() of Car class.if this method was non static,then we have to create a instance of car class to use that method ,but if we make that
 			 method static,we need not create instance of that class)
 			b) if we don't want to override method.
+	
+	static blocks are used to :
+	a) initialize static variables at time of class loading.
+	b) if the initialization is complex . eg: 
+	private static Integer[] array;
+	static {
+    array = new Integer[1000];
+    for (int i = 0; i < 1000; i++) {
+        array[i] = 7 * i;
+    }
+	}
+	
+	
+			
 
      
 	 
