@@ -55,13 +55,35 @@ ans) they dont have any name and they are executed before constructors are execu
 
 7)difference between constructors and regular methods.
 ans) Constructors must have the same name as the class name and cannot return a value. The constructors are called only once per creation of an object while regular methods 
- can be called many times. Regular methods can have any name and can have any return type.
+ can be called many times. Regular methods can have any name and can have any return type.constructors are called implicitly while regular methods are called explicitly.
  
 8) calling constructors:
    to call same class const, use this() and for parent class use super().
    to call super class method,use super.foo().
 
-9) s   
+9) IS-A AND HAS-A RELATIONSHIP
+ans) is-a relationship is achieved by inheritance and has-a relation ship is achieved by composition.
+
+10) what is automatic type promotion and type casting?
+ans) in automatic type promotion or implicit type promotion,if we assing a value of data type of size lower than data type we are assigning to,java promotes the data type automatically.for eg.
+if we assign int value like 20 to float variable,20 is converted to 20.0 . java doesnot not implicitly converts datatype of greater size to lesser one as it may cause data loss. fo eg. if 
+we want to convert 20.9 to int,we will get only 20.we need to do it explicitly by using tyoe casting as int i=(int)20.9 (if type casting not used,c.t error is generated).
+we cannot type cast boolean value to other values,it generates c.t error. type casting is also to convert object of one class type to other in case there exist is-a relationship between them.
+(first one is parent of second one)
+
+11) why static variables and functions?
+ans) We can apply java static keyword with variables, methods, blocks and nested class.
+     memory is allocated only once to static variables i.e at the time of class loading.
+     we can call static members in non static methods,but not vice versa (because non static members are not allocated memory at the time of class loading,so c.t error is thrown)
+	 
+	 we make those class variables static which has to be shared among different instances of same class and which has to be called in static methods before their instances are created.
+	 
+     few reasons to make class methods static are:
+			a) these methods can work independent of instance creation and they donot use any instance variables.
+			( consider a methods convertMphToKmph() of Car class.if this method was non static,then we have to create a instance of car class to use that method ,but if we make that
+			 method static,we need not create instance of that class)
+			b) if we don't want to override method.
+
      
 	 
 	 
