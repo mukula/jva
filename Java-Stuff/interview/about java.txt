@@ -64,7 +64,7 @@ ans) Constructors must have the same name as the class name and cannot return a 
    to call super class method,use super.foo().
 
 9) IS-A AND HAS-A RELATIONSHIP
-ans) is-a relationship is achieved by inheritance and has-a relation ship is achieved by composition.
+ans) is-a relationship is achieved by inheritance and has-a relation ship is achieved by composition/aggregation.
 
 10) what is automatic type promotion and type casting?
 ans) in automatic type promotion or implicit type promotion,if we assing a value of data type of size lower than data type we are assigning to,java promotes the data type automatically.for eg.
@@ -97,6 +97,35 @@ ans) We can apply java static keyword with variables, methods, blocks and nested
         array[i] = 7 * i;
     }
 	}
+	
+12) why this keyword ?
+ans) Here is given the  usage of java this keyword.
+
+    this keyword can be used to refer current class instance variable.
+    this() can be used to invoke current class constructor.
+    this can be passed as an argument in the method & constructor call.    
+    this keyword can also be used to return the current class instance.
+	
+13) what is Inheritance?
+ans) Inheritance in java is a mechanism in which one object acquires all the non private-properties and behaviors of parent class.(eg: by extending thread class,our class can behave as thread)
+     Inheritance represents the IS-A relationship, also known as parent-child relationship.
+	 it's one of four important feature provided by java.
+	 we use inheritance for code reusability and to achieve runtime polymorpishm.()
+	 (runtime polymorpishm refers to process in which the call to overridden method is resolved at runtime.so if a method takes argument of particular class type,we can pass any object 
+	 of child as parameter,and the call to method is resolved at runtume in case of overridden methods.)
+	 three types : single,multilevel and hierarchical.
+	 Inheritance is achieved by using extend keyword
+	 eg: car and bus can inherit vehicle.if we have a class that have a method called startEngine,we can make it's parameter of type of Vehicle so that we can either pass car or bus object
+	     startEngine calls a particular method of vehicle class that is overriden by both car and bus class to provide their own implementation.
+
+14) what is composition/aggreagation?
+ans) composition is has-a relationship.for eg: employee has an address.and address can have multiple fields like city ,state etc. so employee has-a address.
+
+15)
+     
+     
+      
+	
 	
 	
 			

@@ -1,0 +1,74 @@
+ drivers implement the odbc api which .drivers are  made by database vendors.
+ 
+ jdbc driver are classes that implements jdbc interfaces and generally made by DB vendors
+ 
+ to execute a query,we have two methods: by prepared statement and by Statement. prepared statement is a subinterface of statement.
+ The performance of the application will be faster if you use PreparedStatement interface because query is compiled only once
+ 
+ to do a db operation we must perform following operations:
+ 
+ 
+    Register the driver class
+    Creating connection
+    Creating statement
+    Executing queries
+    Closing connection
+
+by writing Class.forName("oracle.jdbc.driver.OracleDriver"); , we load the Driver class,this class contains static block which contains a code something like DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+thus Drivermanager register the Driver class. 
+in place of Class.forName("oracle.jdbc.driver.OracleDriver"),we can also write DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver()); , but here we are hard coding the driver class,whereas in 
+Class.forName("oracle.jdbc.driver.OracleDriver") , we can provide class name as string at runtime , so this is preferred.
+ 
+--- prepared statement----
+ 
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost","system","oracle");
+PreparedStatement pst = con.prepareStatement("insert into sai values(687)");
+pst.executeQuery();
+
+
+-----statement------
+
+Class.forName("oracle.jdbc.driver.OracleDriver");
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost","system","oracle");
+Statement stmt=con.createStatement();
+stmt.executeQuery("insert into sai values(56)");
+
+resultset: 
+
+if we are perfroming such operations on database which returns result in form of sql table,it is returned in form of resultset.
+for prepared statement , we can get it as: 
+PreparedStatement pst = con.prepareStatement("select * from sai");
+ResultSet rs=pst.executeQuery();
+
+for statement, we can get it as:
+ResultSet rs=stmt.executeQuery("select * from sai");
+
+if the operation like update,delete doesnot return any data,we must use executeUpdate(). it doesnot return resultset,it returns a int value which is number of times the query ran.if we still
+use executeQuery,then the query is executed,but we get sql exception of invalid column index.
+
+
+one main benefit of prepared statement is shown by folowing code:
+
+PreparedStatement stmt=con.prepareStatement("insert into Emp values(?,?)");  
+stmt.setInt(1,101);//1 specifies the first parameter in the query  
+stmt.setString(2,"Ratan");  
+int i=stmt.executeUpdate(); //i will contain 1
+
+
+batch processing:
+
+PreparedStatement pst = con.prepareStatement("insert into sai values(?,?)");
+pst.setInt(1,61);
+pst.setInt(2,71);
+pst.addBatch();
+
+pst.setInt(1,69);
+pst.setInt(2,79);
+pst.addBatch();
+
+pst.executeBatch();
+
+
+
+

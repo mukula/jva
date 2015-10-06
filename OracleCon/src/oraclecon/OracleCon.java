@@ -4,7 +4,7 @@
   now add odbc14.jar to libraries in OrcleCon project in netbeans
   odbc14 is loacted at C:\oraclexe\app\oracle\product\10.2.0\server\jdbc\lib\odbc14.jar
   now run the project.
-*/
+*/     
 package oraclecon;
 import java.sql.*;
 class OracleCon{
