@@ -110,9 +110,11 @@ ans) Here is given the  usage of java this keyword.
 ans) Inheritance in java is a mechanism in which one object acquires all the non private-properties and behaviors of parent class.(eg: by extending thread class,our class can behave as thread)
      Inheritance represents the IS-A relationship, also known as parent-child relationship.
 	 it's one of four important feature provided by java.
-	 we use inheritance for code reusability and to achieve runtime polymorpishm.()
+	 we use inheritance for code reusability, to achieve runtime polymorpishm and to extend adapter classes.
 	 (runtime polymorpishm refers to process in which the call to overridden method is resolved at runtime.so if a method takes argument of particular class type,we can pass any object 
 	 of child as parameter,and the call to method is resolved at runtume in case of overridden methods.)
+         ( adapter classes provide default implementation of all methods of an interface so that we need not override all of them.for eg, MouseAdapter class provide empty implementation of 
+           MouseListener Interface . if we extend mouseadapter,we need to override only those methods that we require.	 
 	 three types : single,multilevel and hierarchical.
 	 Inheritance is achieved by using extend keyword
 	 eg: car and bus can inherit vehicle.if we have a class that have a method called startEngine,we can make it's parameter of type of Vehicle so that we can either pass car or bus object
@@ -121,7 +123,7 @@ ans) Inheritance in java is a mechanism in which one object acquires all the non
 14) what is composition/aggreagation?
 ans) composition is has-a relationship.for eg: employee has an address.and address can have multiple fields like city ,state etc. so employee has-a address.
 
-15)
+15) 
      
      
       

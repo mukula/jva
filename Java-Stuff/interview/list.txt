@@ -2,3 +2,5 @@
 2) why oops
 3) difference- java and c++
 4) why multithreading- helped in  my project 
+5) why xml files in framework: may be to avoid hard coding
+6) why use ide: import suggestions
