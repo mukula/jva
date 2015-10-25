@@ -11,6 +11,5 @@ Socket s=new Socket("Localhost",10);//connect to server listening at port 10 in 
 System.out.println("connected through localPost: "+s.getLocalPort());
 new RecieveMessage(s,"Server");
 new SendMessage(s);
-
 }
 }

@@ -1,7 +1,8 @@
-java interview:
+java interview sites:
 http://www.studytechno.com/c-programming-interview-questions.html
 http://stackoverflow.com/questions/24871827/how-many-sockets-do-google-open-for-every-request-it-receives?rq=1
 http://www.javaforecast4u.com/search/label/InterviewQuestions
 http://www.interviewserver.com
 http://java-questions.com
 javarevisited.blogspot.com
+

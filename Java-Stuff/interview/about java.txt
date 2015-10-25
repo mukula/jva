@@ -1,7 +1,8 @@
 http://www.programmerinterview.com/index.php/java-questions/how-system-out-println-works/
 
 1) why use Java?
-Ans)   a) Java is simple: the syntax is similar to c++,so java is easy to learn for c++ programmers .Java does not contain complicated features like explicit pointers , operator overloading 
+Ans)  java is opensource and free.
+ a) Java is simple: the syntax is similar to c++,so java is easy to learn for c++ programmers .Java does not contain complicated features like explicit pointers , operator overloading 
 			as they may create few bugs (like memory leaks due to unreferenced locations ).we need not waste our time in removing unreferenced objects as Automatic Garbage collection does that job.
 	   b) Java is platform independent : (A platform is the hardware or software environment in which a program runs) . Java is platform independent bacause once we compile the java
 	       programs,we can run the byte code on any platform that have jvm installed.(jvm takes care of converting byte code to native code.so jvm is platform specific)(c is not platform as 
